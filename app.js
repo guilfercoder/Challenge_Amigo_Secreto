@@ -9,4 +9,26 @@ function adicionarAmigos(){
         alert("Digite um nome válido.");
         return;
     }
+
+    if (!amigos.includes(nome)) {
+        amigos.push(nome);
+        atualizarLista();
+        campoNomes.value = "";
+    }
+    else {
+        alert("Esse amigo já foi adicionado.");
+    }
 }
+
+function atualizarListaAmigos() {
+    let lista = document.getElementById("listaAmigos");
+    lista.innerHTML = "";
+
+    for (let nome of amigos) {
+        let item = document.createElement("li");
+        item.textContent = nome;
+        lista.appendChild(item);
+    }
+}
+
+
