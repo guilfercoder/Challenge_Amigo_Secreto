@@ -31,4 +31,19 @@ function atualizarListaAmigos() {
     }
 }
 
+function sorteio(){
+    if (amigos.length < 2) {
+        alert("Adicione pelo menos 2 amigos para realizar o sortetio.");
+        return;
+    }
+}
+
+let sorteio = [...amigos];
+sorteio.sort(() => Math.random() - 0.5);
+
+while (!VerificaSorteio(sorteio)) {
+    sorteio.sort(() => Math.random() - 0.5);
+}
+
+mostrarResultado(sorteio);
 
