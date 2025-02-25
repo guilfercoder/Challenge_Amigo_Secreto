@@ -36,7 +36,7 @@ function sorteio(){
         alert("Adicione pelo menos 2 amigos para realizar o sortetio.");
         return;
     }
-}
+
 
 let sorteio = [...amigos];
 sorteio.sort(() => Math.random() - 0.5);
@@ -46,4 +46,14 @@ while (!VerificaSorteio(sorteio)) {
 }
 
 mostrarResultado(sorteio);
+}
+
+function verificarSorteio(sorteio) {
+    for (let i = 0; i < amigos.length; i++) {
+        if (amigos[i] === sorteio[i]){
+            return false;
+        }
+    }
+    return true;
+}
 
