@@ -116,8 +116,8 @@ button {
 }
 
 .button-add {
-    background-color: var(--color-tertiary);
-    color: var(--color-text);
+    background-color: var(--color-button);
+    color: var(--color-white);
     border-radius: 0 25px 25px 0;
 }
 
@@ -136,7 +136,7 @@ ul {
 
 .result-list {
     margin-top: 15px;
-    color: #05DF05;
+    color: #131413;
     font-size: 22px;
     font-weight: bold;
     text-align: center;

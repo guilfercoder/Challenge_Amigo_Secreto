@@ -1,11 +1,12 @@
 //O principal objetivo deste desafio é fortalecer suas habilidades em lógica de programação. Aqui você deverá desenvolver a lógica para resolver o problema.
 let amigos = [];
 
-function adicionarAmigos(){
-    let campoNomes = document.getElementById("nomeAmigos");
-    let nome = campoNomes.ariaValueMax.trim();
+function adicionarAmigo() 
+{
+    let campoNomes = document.getElementById("amigo");
+    let nome = campoNomes.value.trim();
 
-    if (nome === ""){
+    if (nome === "") {
         alert("Digite um nome válido.");
         return;
     }
@@ -20,7 +21,7 @@ function adicionarAmigos(){
     }
 }
 
-function atualizarListaAmigos() {
+function atualizarLista() {
     let lista = document.getElementById("listaAmigos");
     lista.innerHTML = "";
 
@@ -31,9 +32,9 @@ function atualizarListaAmigos() {
     }
 }
 
-function sorteio(){
+function sortearAmigo(){
     if (amigos.length < 2) {
-        alert("Adicione pelo menos 2 amigos para realizar o sortetio.");
+        alert("Adicione pelo menos 2 amigos para realizar o sorteio.");
         return;
     }
 
@@ -41,7 +42,7 @@ function sorteio(){
 let sorteio = [...amigos];
 sorteio.sort(() => Math.random() - 0.5);
 
-while (!VerificaSorteio(sorteio)) {
+while (!verificarSorteio(sorteio)) {
     sorteio.sort(() => Math.random() - 0.5);
 }
 
@@ -57,3 +58,13 @@ function verificarSorteio(sorteio) {
     return true;
 }
 
+function mostrarResultado(sorteio) {
+    let listaResultado = document.getElementById("resultado");
+    listaResultado.innerHTML = "";
+
+    for (let i = 0; i < amigos.length; i++) {
+        let item = document.createElement("li");
+        item.textContent = `${amigos[i]} - > ${sorteio[i]}`;
+        listaResultado.appendChild(item);
+    }
+}
